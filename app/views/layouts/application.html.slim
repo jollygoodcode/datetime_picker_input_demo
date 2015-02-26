@@ -1,0 +1,69 @@
+doctype html
+html
+  head
+    title Datetime Picker Input Demo
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+    meta name='viewport' content='width=device-width, initial-scale=1'
+  body
+    header style='padding: 20px 0 40px 0; background: #ff7a95; color: white;'
+      .container
+        h1 style='font-size: 50px;' Datetime Picker Input
+        p style='font-size: 18px; font-weight: 300; color: #ffdde4;'
+          ' Documentation for #{link_to 'datetime_picker_input', 'https://github.com/jollygoodcode/datetime_input'} that adds a JavaScript datetime picker easily
+          br
+          ' to your Ruby on Rails, Bootstrap-enabled SimpleForm inputs.
+
+    .container
+      section
+        h3 Prerequisites
+        hr
+        p This gem is Rails 4+ compatible only, and your app should already have Bootstrap and SimpleForm installed.
+        p Otherwise, set up #{link_to 'Bootstrap', 'https://github.com/twbs/bootstrap-sass'} and #{link_to 'SimpleForm', 'https://github.com/plataformatec/simple_form'} now.
+
+      section
+        h3 Installation
+        hr
+        p Add this to your application's Gemfile then run <code>bundle install</code>:
+        pre
+          ' gem 'datetime_input'
+
+        p In the JavaScript manifest file <code>application.js</code>, add:
+        pre
+          ' //= require datetime_input
+
+        p In the CSS manifest file <code>application.scss</code>, add:
+        pre
+          ' @import 'datetime_input';
+        p or <code>application.css</code>:
+        pre
+          ' *= require datetime_input
+
+      section
+        h3 Demo
+        hr
+        = yield
+
+      section
+        h3 Customization
+        hr
+        p To customize the input field, you can copy the files from the gem into your app's directory:
+        pre
+          ' rails g datetime_input:install
+        p This will generate <code>datetime_picker_input.rb</code> under <code>app/inputs</code>.
+
+      section
+        h3 Credits
+        hr
+        p
+          ' This gem is heavily dependent on and only possible because of the great work done in these other gems:
+        ul
+          li= link_to 'https://github.com/TrevorS/bootstrap3-datetimepicker-rails'
+          li= link_to 'https://github.com/derekprior/momentjs-rails'
+
+    footer.text-center style='padding: 40px 0 20px;'
+      .container
+        hr
+        small.text-muted Built with <3 by Jolly Good Code.
