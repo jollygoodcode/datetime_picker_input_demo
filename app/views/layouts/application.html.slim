@@ -12,7 +12,7 @@ html
       .container
         h1 style='font-size: 50px;' Datetime Picker Input
         p style='font-size: 18px; font-weight: 300; color: #ffdde4;'
-          ' Documentation for #{link_to 'datetime_picker_input', 'https://github.com/jollygoodcode/datetime_input'} that adds a JavaScript datetime picker easily
+          ' Documentation for #{link_to 'datetime_picker_input', 'https://github.com/jollygoodcode/datetime_picker_input'} that adds a JavaScript datetime picker easily
           br
           ' to your Ruby on Rails, Bootstrap-enabled SimpleForm inputs.
 
@@ -28,18 +28,18 @@ html
         hr
         p Add this to your application's Gemfile then run <code>bundle install</code>:
         pre
-          ' gem 'datetime_input'
+          ' gem 'datetime_picker_input'
 
         p In the JavaScript manifest file <code>application.js</code>, add:
         pre
-          ' //= require datetime_input
+          ' //= require datetime_picker_input
 
         p In the CSS manifest file <code>application.scss</code>, add:
         pre
-          ' @import 'datetime_input';
+          ' @import 'datetime_picker_input';
         p or <code>application.css</code>:
         pre
-          ' *= require datetime_input
+          ' *= require datetime_picker_input
 
       section
         h3 Demo
@@ -49,10 +49,16 @@ html
       section
         h3 Customization
         hr
-        p To customize the input field, you can copy the files from the gem into your app's directory:
+        p
+          ' To
+          = link_to "customize the input field", "https://github.com/plataformatec/simple_form/wiki/Adding-custom-input-components"
+          ' ,
+          ' you can generate the files by generator provided by
+          = link_to "datetime_picker_input", "https://github.com/jollygoodcode/datetime_picker_input"
+          | :
         pre
-          ' rails g datetime_input:install
-        p This will generate <code>datetime_picker_input.rb</code> under <code>app/inputs</code>.
+          ' $ rails g datetime_picker_input:install
+        p This will generate <code>datetime_picker_input.rb</code> under <code>app/inputs</code> directory. Then you can start customizing it.
 
       section
         h3 Credits
@@ -63,7 +69,29 @@ html
           li= link_to 'https://github.com/TrevorS/bootstrap3-datetimepicker-rails'
           li= link_to 'https://github.com/derekprior/momentjs-rails'
 
+    javascript:
+      window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+
     footer.text-center style='padding: 40px 0 20px;'
       .container
         hr
-        small.text-muted Built with <3 by Jolly Good Code.
+        p
+          ' Made with <3 by
+          = link_to "Jolly Good Code", "http://jollygoodcode.com"
+          | .
+        p
+          ' Open sourced under MIT.
+          ' Copyright #{Time.now.year}
+          = link_to "Jolly Good Code", "http://jollygoodcode.com"
+          | .
+        p
+          ul.list-unstyled.list-inline
+            li
+              iframe.github-btn allowtransparency="true" frameborder="0" height="20px" scrolling="0" src="http://ghbtns.com/github-btn.html?user=jollygoodcode&repo=datetime_picker_input&type=watch&count=true" width="112px"
+            li
+              iframe.github-btn allowtransparency="true" frameborder="0" height="20px" scrolling="0" src="http://ghbtns.com/github-btn.html?user=jollygoodcode&repo=datetime_picker_input&type=fork&count=true" width="112px"
+          ul.list-unstyled.list-inline
+            li
+              a.twitter-follow-button data-show-count="false" href="https://twitter.com/jollygoodcode" Follow @jollygoodcode
+            li
+              a.twitter-share-button data-count="horizontal" data-url=root_url data-via="jollygoodcode" href="https://twitter.com/share" Tweet

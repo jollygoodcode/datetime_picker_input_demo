@@ -1,7 +1,9 @@
-PATH
-  remote: ../datetime_input
+GIT
+  remote: git://github.com/jollygoodcode/datetime_picker_input.git
+  revision: d902f7dc64b151a3cc74390bbe32850bf15356b5
+  branch: master
   specs:
-    datetime_input (4.0.0)
+    datetime_picker_input (4.0.0)
       bootstrap3-datetimepicker-rails (~> 4.0.0)
       momentjs-rails (>= 2.9.0)
 
@@ -182,7 +184,7 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   coffee-rails (~> 4.1.0)
-  datetime_input!
+  datetime_picker_input!
   jbuilder (~> 2.0)
   jquery-rails
   pg

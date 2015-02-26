@@ -48,5 +48,5 @@ gem 'slim-rails'
 gem 'bootstrap-sass'
 
 gem 'simple_form'
-# gem 'datetime_input', github: 'jollygoodcode/datetime_input'
-gem 'datetime_input', path: '../datetime_input'
+
+gem 'datetime_picker_input', github: 'jollygoodcode/datetime_picker_input', branch: 'master'

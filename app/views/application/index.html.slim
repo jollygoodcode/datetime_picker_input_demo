@@ -1,15 +1,38 @@
 .row
   .col-sm-6
-    p Explanation
+    p Simple Usage
     = simple_form_for Event.new do |f|
-      = f.input :when, as: :datetime_picker
+      = f.input :when, as: :date_time_picker
     hr
     pre
-      ' code
+      | = simple_form_for Event.new do |f|
+      br
+      |   f.input :when, as: :date_time_picker
   .col-sm-6
-    p Explanation
+    p With customized options
     = simple_form_for Event.new do |f|
-      = f.input :when, as: :datetime_picker
+      = f.input :when, as: :date_time_picker, input_html: \
+        { data: \
+          { date_format: "YYYY-MM-DD hh:mm A", \
+            date_useminutes: false, \
+            date_sidebyside: false, \
+            date_mindate: Time.current.strftime('%Y-%m-%d') \
+          } \
+        }
     hr
     pre
-      ' code
+      | = f.input :starts_at, as: :date_time_picker, input_html:
+      br
+      |   { data:
+      br
+      |     { date_format: "YYYY-MM-DD hh:mm A",
+      br
+      |       date_useminutes: false,
+      br
+      |       date_sidebyside: false,
+      br
+      |       date_mindate: Time.current.strftime('%Y-%m-%d')
+      br
+      |     }
+      br
+      |   }
