@@ -16,7 +16,7 @@ html
       .container
         h1 style='font-size: 50px;' Datetime Picker Input
         p style='font-size: 18px; font-weight: 300; color: #ffdde4;'
-          ' Demo app for #{link_to 'datetime_picker_input', 'https://github.com/jollygoodcode/datetime_picker_input', style: 'color: #fff;'} that allows you to easily add a JavaScript datetime picker
+          ' Demo app for #{link_to 'datetime_picker_input', 'https://github.com/jollygoodcode/datetime_picker_input', style: 'color: #fff;'} that allows you to easily add a #{link_to 'JavaScript datetime picker', 'http://eonasdan.github.io/bootstrap-datetimepicker/', style: 'color: #fff;'}
           br
           ' to your Ruby on Rails, Bootstrap-enabled Simple Form input.
 
@@ -24,7 +24,7 @@ html
       section
         h3 Prerequisites
         hr
-        p This gem is Rails 3.1 and 4+ compatible, and your app should already have Bootstrap and Simple Form installed.
+        p Rails 3.1 and 4+ compatible, and your app should already have Bootstrap and Simple Form installed.
         p Otherwise, set up #{link_to 'Bootstrap', 'https://github.com/twbs/bootstrap-sass'} and #{link_to 'Simple Form', 'https://github.com/plataformatec/simple_form'} now.
 
       section
@@ -63,13 +63,13 @@ html
         p Simply do:
         pre
           ' $ rails g datetime_picker_input:install
-        p This will generate <code>datetime_picker_input.rb</code> under <code>app/inputs</code> directory. Then you can start customizing it.
+        p This will generate <code>datetime_picker_input.rb</code> under <code>app/inputs</code> directory which you can modify.
 
       section
         h3 Dependencies
         hr
         p
-          ' This gem is heavily dependent on and only possible because of the great work done in these other gems:
+          ' This gem is heavily dependent on and only possible because of the great work done in these gems:
         ul
           li= link_to 'https://github.com/TrevorS/bootstrap3-datetimepicker-rails'
           li= link_to 'https://github.com/derekprior/momentjs-rails'
