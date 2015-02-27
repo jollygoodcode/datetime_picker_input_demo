@@ -25,5 +25,4 @@ end
 gem "slim-rails"
 gem "bootstrap-sass"
 gem "simple_form"
-# gem "datetime_picker_input"
-gem "datetime_picker_input", path: "vendor/gems/datetime_picker_input-4.0.0"
+gem "datetime_picker_input"
