@@ -8,20 +8,24 @@ html
 
     meta name='viewport' content='width=device-width, initial-scale=1'
   body
+    / GitHub Fork Ribbon
+    a href="https://github.com/jollygoodcode/datetime_picker_input"
+      img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"
+
     header style='padding: 20px 0 40px 0; background: #ff7a95; color: white;'
       .container
         h1 style='font-size: 50px;' Datetime Picker Input
         p style='font-size: 18px; font-weight: 300; color: #ffdde4;'
-          ' Documentation for #{link_to 'datetime_picker_input', 'https://github.com/jollygoodcode/datetime_picker_input', style: 'color: #fff;'} that adds a JavaScript datetime picker easily
+          ' Demo app for #{link_to 'datetime_picker_input', 'https://github.com/jollygoodcode/datetime_picker_input', style: 'color: #fff;'} that allows you to easily add a JavaScript datetime picker
           br
-          ' to your Ruby on Rails, Bootstrap-enabled SimpleForm inputs.
+          ' to your Ruby on Rails, Bootstrap-enabled Simple Form input.
 
     .container
       section
         h3 Prerequisites
         hr
-        p This gem is Rails 4+ compatible only, and your app should already have Bootstrap and SimpleForm installed.
-        p Otherwise, set up #{link_to 'Bootstrap', 'https://github.com/twbs/bootstrap-sass'} and #{link_to 'SimpleForm', 'https://github.com/plataformatec/simple_form'} now.
+        p This gem is Rails 3.1 and 4+ compatible, and your app should already have Bootstrap and Simple Form installed.
+        p Otherwise, set up #{link_to 'Bootstrap', 'https://github.com/twbs/bootstrap-sass'} and #{link_to 'Simple Form', 'https://github.com/plataformatec/simple_form'} now.
 
       section
         h3 Installation
@@ -53,15 +57,16 @@ html
           ' To
           = link_to "customize the input field", "https://github.com/plataformatec/simple_form/wiki/Adding-custom-input-components"
           ' ,
-          ' you can generate the files by generator provided by
+          ' you can copy <code>datetime_picker_input.rb</code> from the gem to your app by using the generator included in
           = link_to "datetime_picker_input", "https://github.com/jollygoodcode/datetime_picker_input"
-          | :
+          | .
+        p Simply do:
         pre
           ' $ rails g datetime_picker_input:install
         p This will generate <code>datetime_picker_input.rb</code> under <code>app/inputs</code> directory. Then you can start customizing it.
 
       section
-        h3 Credits
+        h3 Dependencies
         hr
         p
           ' This gem is heavily dependent on and only possible because of the great work done in these other gems:
@@ -69,14 +74,15 @@ html
           li= link_to 'https://github.com/TrevorS/bootstrap3-datetimepicker-rails'
           li= link_to 'https://github.com/derekprior/momentjs-rails'
 
-    javascript:
-      window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+    footer.text-center style='padding: 20px 0'
 
-    footer.text-center style='padding: 40px 0 20px;'
+      javascript:
+        window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+
       .container
         hr
         p
-          ' Made with <3 by
+          ' Made with love by
           = link_to "Jolly Good Code", "http://jollygoodcode.com"
           | .
         p
