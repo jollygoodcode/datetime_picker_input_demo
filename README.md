@@ -21,19 +21,19 @@ But...The datetime_picker_input gem is definitely tested!
 
 ## Contributing
 
-1. Fork it ( https://github.com/jollygoodcode/datetime_picker_input_demo/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
-6. Wait for us to Thank YOU!
+Please see the [CONTRIBUTING.md](/CONTRIBUTING.md) file.
 
 ## Credits
 
-A huge THANK YOU to all our [contributors] (https://github.com/jollygoodcode/datetime_picker_input_demo/graphs/contributors)! :heart:
-
-This project is maintained by [Jolly Good Code](http://www.jollygoodcode.com).
+A huge THANK YOU to all our [contributors](https://github.com/jollygoodcode/datetime_picker_input_demo/graphs/contributors)! :heart:
 
 ## License
 
-MIT License. See [LICENSE](LICENSE) for details.
+Please see the [LICENSE.md](/LICENSE.md) file.
+
+## Maintained by Jolly Good Code
+
+[![Jolly Good Code](https://cloud.githubusercontent.com/assets/1000669/9362336/72f9c406-46d2-11e5-94de-5060e83fcf83.jpg)](http://www.jollygoodcode.com)
+
+We specialise in Agile practices and Ruby, and we love contributing to open source.
+[Speak to us](http://www.jollygoodcode.com/#get-in-touch) about your next big idea, or [check out our projects](http://www.jollygoodcode.com/open-source).
