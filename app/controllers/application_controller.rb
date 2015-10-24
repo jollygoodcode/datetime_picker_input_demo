@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def index
-    @event = Event.new(when: Time.current)
+    @event = Event.new(when: nil)
   end
 
   def submit_and_error
