@@ -5,32 +5,41 @@
     p Defaults to a DateTime format of 'DD/MM/YY MM:HH A'.
 
     hr
-    = simple_form_for Event.new do |f|
+    = simple_form_for @event, url: 'submit_and_error' do |f|
       = f.input :when, as: :date_time_picker
+      = f.submit "Save", class: 'btn'
 
+    br
     p
       strong Code
     pre
-      | = simple_form_for Event.new do |f|
+      | = simple_form_for @event do |f|
       br
-      |   f.input :when, as: :date_time_picker
+      |   = f.input :when, as: :date_time_picker
+
+    p
+    ' Underneath the hood, #{link_to "Moment.js", ""} is used to parse and format dates on the DT picker.
+    ' For other valid formats, please refer to #{link_to "their Docs", "http://momentjs.com/docs/#/displaying/"}.
+
   .col-sm-6
     p
       strong Customized Options
     p Refer to #{link_to "Bootstrap 3 Datepicker's Doc", "http://eonasdan.github.io/bootstrap-datetimepicker/Options/"} for a full list of options.
 
     hr
-    = simple_form_for Event.new do |f|
+    = simple_form_for @event, url: 'submit_and_error' do |f|
       = f.input :when, as: :date_time_picker, input_html: \
         { data: \
           { \
-            date_format: "YYYY-MM-DD hh:mm A", \
+            date_format: "YYYY.MM.DD hh:mm A", \
             date_day_view_header_format: 'MMM YYYY', \
             date_side_by_side: true, \
             date_min_date: Time.current.strftime('%Y-%m-%d') \
           } \
         }
+      = f.submit "Save", class: 'btn'
 
+    br
     p
       strong Code
     pre
@@ -40,7 +49,7 @@
       br
       |     {
       br
-      |       date_format: "YYYY-MM-DD hh:mm A",
+      |       date_format: "YYYY.MM.DD hh:mm A",
       br
       |       date_day_view_header_format: 'MMM YYYY',
       br
