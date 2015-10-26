@@ -2,7 +2,7 @@
   .col-sm-6
     p
       strong Simple Usage
-    p Defaults to a DateTime format of 'DD/MM/YY MM:HH A'.
+    p Defaults to a DateTime format of 'YYYY-MM-DD HH:mm:ss Z'.
 
     hr
     = simple_form_for @event, url: 'submit_and_error' do |f|
@@ -18,8 +18,53 @@
       |   = f.input :when, as: :date_time_picker
 
     p
-    ' Underneath the hood, #{link_to "Moment.js", ""} is used to parse and format dates on the DT picker.
-    ' For other valid formats, please refer to #{link_to "their Docs", "http://momentjs.com/docs/#/displaying/"}.
+      ' By default (without config), when you select a value from the DateTime picker, the format defaults to <code>YYYY-MM-DD HH:mm:ss Z</code>,
+      ' i.e. <code>2015-10-25 14:33:02 +0800</code>.
+    p
+      ' This ensures that, out of the box, this value (with Time Zone) would be passed on to the Rails backend and be saved as a DateTime value with the <strong>correct Time Zone</strong>.
+
+    p
+     ' Beneath the hood, Moment.js is used to parse and format value on the DateTime picker.
+     ' For other valid formats, please refer to #{link_to "their Docs", "http://momentjs.com/docs/#/displaying/"}.
+
+
+    p
+      strong
+        '  However, if you do change the format (like in the Customized Options example),
+        ' then you will need to implement your attribute setter and getter in Rails backend
+        ' to save and display the value correctly in your desired Time Zone.
+
+    p
+      ' One way to do this is to implement an <code>around_filter</code> on your controllers like so:
+
+    pre
+
+      |  class AppointmentsController < ApplicationController
+      br
+      |    around_action :use_current_timezone
+      br
+      |
+      br
+      |    # .. your controller code
+      br
+      |
+      br
+      |    def use_current_timezone(&block)
+      br
+      |      Time.use_zone(current_user.timezone, &block)
+      br
+      |    end
+      br
+      |  end
+
+    p
+      ' This uses your user's Time Zone, so that the DateTime gets stored and will be displayed as expected (from the user's perspective).
+
+    p
+      ' We are also assuming that, in this example, the current_user has a custom Time Zone, otherwise, you should just use the gem's default.
+
+    p Times are hard..
+
 
   .col-sm-6
     p
@@ -49,7 +94,7 @@
       br
       |     {
       br
-      |       date_format: "YYYY.MM.DD hh:mm A",
+      |       date_format: "YYYY.MM.DD hh:mm A Z",
       br
       |       date_day_view_header_format: 'MMM YYYY',
       br
@@ -61,7 +106,7 @@
       br
       |   }
 
-    p #{link_to "Bootstrap 3 Datepicker", "https://github.com/Eonasdan/bootstrap-datetimepicker/blob/master/src/js/bootstrap-datetimepicker.js#L291"} is able to initialize a datetime picker through the use of <code>data</code> attributes on the <code>input</code> field.
+    p #{link_to "Bootstrap 3 Datepicker", "https://github.com/Eonasdan/bootstrap-datetimepicker/blob/master/src/js/bootstrap-datetimepicker.js#L291"} is able to init a DateTime picker via the use of <code>data</code> attributes on the <code>input</code> field.
 
     p To do that, modify any of the options specified in #{link_to "Bootstrap 3 Datepicker's Doc", "http://eonasdan.github.io/bootstrap-datetimepicker/Options/"} by adding a prefix of <code>date</code> and underscoring the resulting option name.
 
@@ -70,3 +115,35 @@
       ul
        li <code>dayViewHeaderFormat</code> to <code>date_day_view_header_format</code>
        li <code>minDate</code> to <code>date_min_date</code>
+
+  .col-sm-12
+    hr
+    p
+      strong Date Picker Only
+    p Just set <code>date_format</code> to <code>YYYY-MM-DD</code>.
+
+    hr
+    = simple_form_for @event, url: 'submit_and_error' do |f|
+      = f.input :when, as: :date_time_picker, input_html: \
+        { data: \
+          { \
+            date_format: "YYYY-MM-DD", \
+          } \
+        }
+      = f.submit "Save", class: 'btn'
+
+    br
+    p
+      strong Code
+    pre
+      | = f.input :when, as: :date_time_picker, input_html:
+      br
+      |   { data:
+      br
+      |     {
+      br
+      |       date_format: "YYYY-MM-DD",
+      br
+      |     }
+      br
+      |   }
